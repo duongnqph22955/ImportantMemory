@@ -29,6 +29,7 @@ import ListAll from "./ListAll";
 import 'bootstrap/dist/css/bootstrap.css';
 import CreateNFT from "./CreateNFT";
 import GetDetails from "./GetDetails";
+import CreateToken from "./create_Token/CreateToken"
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/" element={<ListAll />} />
           <Route exact path="/get-details" element={<GetDetails />} />
           <Route  path="/createNFT" element={<CreateNFT />} />
+          <Route  path="/create-token" element={<CreateToken />} />
         </Routes>
       </Router>
     </div>
