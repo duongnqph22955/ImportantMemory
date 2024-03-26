@@ -2,9 +2,12 @@ import { useState , useEffect } from "react";
 import axios from "axios";
 import { clusterApiUrl, Connection, PublicKey } from "@solana/web3.js";
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
+import { ShyftSdk, Network } from '@shyft-to/js';
+import { signAndConfirmTransactionFe } from "./create_NFT/utilityfunc";
+
 
 const ListAll = () => {
-  const xKey = "WZz1huMjD4n_Lrma";
+  const xKey = "";
 //   const xKey = "<YOUR_API_KEY>";
   const [wallID, setWallID] = useState("");
   const [network, setNetwork] = useState("devnet");
@@ -72,6 +75,20 @@ const ListAll = () => {
         console.warn(err);
       });
   };
+
+  //send NFT
+  const send = async (nftAddress) => {
+    console.log(nftAddress);
+   const rs = await shyft.nft.transfer({
+     mint : nftAddress,
+     fromAddress : wallID,
+     toAddress : "" // địa chỉ ví muốn gửi đến
+     // toAddress : "5kcUr3pnXGrSLuV6D75u7xe19QFxqo7YK2VqDHowhLQA"
+   });
+   console.log(rs)
+   signAndConfirmTransactionFe(Network.Devnet,rs)
+   }
+
 
   useEffect(() => {
     document.title = 'Danh sách NFT';
@@ -159,6 +176,7 @@ const ListAll = () => {
                       <h5>{item.name}</h5>
                     </a>
                     <h5> Địa chỉ : {item.mint}</h5>
+                    <button type="button" class="btn btn-outline-warning" onClick={() => send(item.mint)}>Send NFT</button>
                   </div>
                 </div>
               </div>
