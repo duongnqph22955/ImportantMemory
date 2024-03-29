@@ -176,8 +176,9 @@ const ListAll = () => {
                       <h5>{item.name}</h5>
                     </a>
                     <h5> Địa chỉ : {item.mint}</h5>
-                    <button type="button" class="btn btn-outline-warning" onClick={() => send(item.mint)}>Send NFT</button>
+                   
                   </div>
+                  <button type="button" class="btn btn-outline-warning" onClick={() => send(item.mint)}>Send NFT</button>
                 </div>
               </div>
             ))}
