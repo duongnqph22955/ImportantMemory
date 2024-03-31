@@ -28,6 +28,19 @@ const Create = () => {
 
 	const [connStatus, setConnStatus] = useState(true);
 
+	 /// set id wallet 
+	 function getQueryParam(paramName) {
+		const queryParams = new URLSearchParams(window.location.search);
+		return queryParams.get(paramName);
+	  }
+	  
+	  const idVi = () => {
+		const id = getQueryParam('id');
+		if (id !== publicKey) {
+			setPublicKey(id); // Cập nhật state chỉ khi giá trị id thay đổi
+		  }
+	  }
+
 	const callback = (signature,result) => {
 		console.log("Signature ",signature);
 		console.log("result ",result);
@@ -89,6 +102,10 @@ const Create = () => {
 			});
 
 	}
+
+	useEffect(() => {
+		idVi(); // Gọi idVi() trong useEffect để đảm bảo nó chỉ được gọi sau khi component đã render
+	  }, []);
 
 	return (
 		<div className="gradient-background">

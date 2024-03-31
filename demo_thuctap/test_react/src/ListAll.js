@@ -164,7 +164,7 @@ const ListAll = () => {
               </button>
             </div>
           </form>
-          <a href="/createNFT">
+          <a href={`/createNFT?id=${wallID}`}>
           <button className="btn btn-outline-info" >Tạo lời chúc mới </button>
           </a>
         </div>
