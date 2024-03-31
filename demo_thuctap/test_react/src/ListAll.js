@@ -79,14 +79,21 @@ const ListAll = () => {
   //send NFT
   const send = async (nftAddress) => {
     console.log(nftAddress);
+    const nguoiNhan = prompt("Địa chỉ người nhận : ");
+    console.log(nguoiNhan)
+   if(nguoiNhan == null || nguoiNhan.trim() === '') {
+     alert("Không để trống địa chỉ")
+   }
+   else{
    const rs = await shyft.nft.transfer({
      mint : nftAddress,
      fromAddress : wallID,
-     toAddress : "" // địa chỉ ví muốn gửi đến
-     // toAddress : "5kcUr3pnXGrSLuV6D75u7xe19QFxqo7YK2VqDHowhLQA"
+     toAddress : nguoiNhan
+     // toAddress : "61b4r665ksy36tp7FKpYdp96uygS959gc64yPm2WBenX"
    });
-   console.log(rs)
+   // console.log(rs)
    signAndConfirmTransactionFe(Network.Devnet,rs)
+      }
    }
 
 
@@ -157,6 +164,9 @@ const ListAll = () => {
               </button>
             </div>
           </form>
+          <a href="/createNFT">
+          <button className="btn btn-outline-info" >Tạo lời chúc mới </button>
+          </a>
         </div>
       </div>)}
     </div>
