@@ -4,7 +4,7 @@ import axios from "axios";
 import { signAndConfirmTransactionFe } from "./utilityfunc";
 
 import disPic from '../resources/images/folder.png';
-const xApiKey = ""; //Enter Your x-api-key here
+const xApiKey = "";
 const Create = () => {
 	const [file, setfile] = useState();
 	const [displayPic, setDisplayPic] = useState(disPic);

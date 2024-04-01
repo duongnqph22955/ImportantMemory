@@ -13,9 +13,7 @@ const GetDetails = () => {
   const [ownAddr, setOwnAddr] = useState("");
   const [roy, setRoy] = useState();
   const [attrib, setAttrib] = useState("");
-//   const [tokenParams, setTokenparams] = useState(
-//     window.location.search.substring(1)
-//   );
+
 const xKey = "";//enter your x api key here
   let tokenParams = window.location.search.substring(1);
 

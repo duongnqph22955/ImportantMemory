@@ -7,7 +7,7 @@ import { signAndConfirmTransactionFe } from "./create_NFT/utilityfunc";
 
 const ListAll = () => {
   const xKey = "";
-  //   const xKey = "<YOUR_API_KEY>";
+ 
   const [wallID, setWallID] = useState("");
   const [network, setNetwork] = useState("devnet");
   const [isLoaded, setLoaded] = useState(false);
