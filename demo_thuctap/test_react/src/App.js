@@ -27,7 +27,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ListAll from "./ListAll";
 import 'bootstrap/dist/css/bootstrap.css';
-import CreateNFT from "./CreateNFT";
+import CreateNFT from "./create_NFT/CreateNFT";
 import GetDetails from "./GetDetails";
 import CreateToken from "./create_Token/CreateToken"
 
