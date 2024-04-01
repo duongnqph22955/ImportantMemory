@@ -60,7 +60,7 @@ const ListAll = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": xKey,
+        "x-api-key": xKe,
       },
       // Attaching the form data
     })

@@ -16,7 +16,7 @@ const GetDetails = () => {
 //   const [tokenParams, setTokenparams] = useState(
 //     window.location.search.substring(1)
 //   );
-const xKey = "WZz1huMjD4n_Lrma";//enter your x api key here
+const xKey = "";//enter your x api key here
   let tokenParams = window.location.search.substring(1);
 
   let getParams = tokenParams.split("&");
