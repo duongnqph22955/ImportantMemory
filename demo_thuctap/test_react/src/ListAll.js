@@ -53,7 +53,7 @@ const ListAll = () => {
     e.preventDefault();
 
     //Note, we are not mentioning update_authority here for now
-    let nftUrl = `https://api.shyft.to/sol/v1/nft/read_all?network=${network}&address=${wallID}`;
+    let nftUrl = `https://api.shyft.to/sol/v0/nft/read_all?address=${wallID}`;
     axios({
       // Endpoint to send files
       url: nftUrl,
