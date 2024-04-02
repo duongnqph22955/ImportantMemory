@@ -7,7 +7,7 @@ import { signAndConfirmTransactionFe } from "./create_NFT/utilityfunc";
 
 const ListAll = () => {
   const xKey = "";
- 
+  //   const xKey = "<YOUR_API_KEY>";
   const [wallID, setWallID] = useState("");
   const [network, setNetwork] = useState("devnet");
   const [isLoaded, setLoaded] = useState(false);
@@ -53,14 +53,14 @@ const ListAll = () => {
     e.preventDefault();
 
     //Note, we are not mentioning update_authority here for now
-    let nftUrl = `https://api.shyft.to/sol/v0/nft/read_all?address=${wallID}`;
+    let nftUrl = `https://api.shyft.to/sol/v1/nft/read_all?network=${network}&address=${wallID}`;
     axios({
       // Endpoint to send files
       url: nftUrl,
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": xKe,
+        "x-api-key": xKey,
       },
       // Attaching the form data
     })

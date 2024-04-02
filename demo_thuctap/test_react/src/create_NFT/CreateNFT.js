@@ -4,7 +4,7 @@ import axios from "axios";
 import { signAndConfirmTransactionFe } from "./utilityfunc";
 
 import disPic from '../resources/images/folder.png';
-const xApiKey = "";
+const xApiKey = "WZz1huMjD4n_Lrma"; //Enter Your x-api-key here
 const Create = () => {
 	const [file, setfile] = useState();
 	const [displayPic, setDisplayPic] = useState(disPic);
@@ -72,7 +72,7 @@ const Create = () => {
 			method: "POST",
 			headers: {
 				"Content-Type": "multipart/form-data",
-				"x-api-key": xApiKe,
+				"x-api-key": xApiKey,
 				Accept: "*/*",
 				"Access-Control-Allow-Origin": "*",
 			},
